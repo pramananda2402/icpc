@@ -57,88 +57,8 @@ inline ll gcd(ll a, ll b) { return b == 0 ? a : gcd(b, a % b); }
 inline ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
 
 
-ll max_length = 1e5;
-
-ll getPairForFixedPoint(ll x, ll y) {
-    ll res =0;
-    for(ll i=1; i<x; i++){
-        int k = floor(-((y/x) * i) + y);
-        cout <<  x << y  << i << " ....... " << k << endl;
-        res += k;
-            
-    }
-    return res;
-    
-    
-}
-
-vector<vll> getPair(ll l){
-    ll a =1, b = 1;
-    vector<vll> v;
-    
-    while( a < l && b < l) {
-        ll x = getPairForFixedPoint(a, b);
-        cout << a << " " << b << " " << x << endl;
-        // if( x > 2 * l){
-        //     break;
-        // }
-        if (x == l){
-            v.push_back({a, b});
-        }
-        if(a == b){
-            a ++;
-        }
-        else{
-            b ++;
-        }
-
-    }
-    return v;
-
-}
-
-
-
-
-
 // run function
 void run() {
-
-    ll l1, l2, n;
-    string s;
-    // cin >> l1 >> l2 >> s;
-    l1 = 0;
-    l2 = 3;
-    n = 2; 
-
-    // convert n 
-
-    // ll i=0, j=0;
-
-    // while(i <= l2 && j <= l2) {
-    //     //  get l points
-
-
-        
-    // }
-    // get all l1 point
-    //  get all l2 point
-
-    vector<vll> v1 = getPair(l1);
-    vector<vll> v2 = getPair(l2);
-    cout << v1.size() << " " << v2.size() << endl;
-    for(auto i : v1){
-        for(auto j : v2){
-            if(i[0] * n == j[0] && i[1] * n == j[1]){
-                cout <<  i[0] * i[1] << endl;
-            }
-        }
-    }
-
-    // find this number from that two array
-
-
-
     
 }
 
